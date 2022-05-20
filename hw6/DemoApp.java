@@ -90,9 +90,9 @@ public class DemoApp {
             return;
         }
         int mid = list.size() / 2;
-        List<T> left = list.subList(0, mid);
+        List<T> left = new ArrayList<>(list.subList(0, mid));
         sortList(left);
-        List<T> right = list.subList(mid, list.size());
+        List<T> right = new ArrayList<>(list.subList(mid, list.size()));
         sortList(right);
 
         merge(list, left, right);
